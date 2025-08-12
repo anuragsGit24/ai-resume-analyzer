@@ -8,6 +8,8 @@ import {
 } from "react-router";
 
 import "./app.css";
+import {usePuterStore} from "~/lib/puter";
+import {useEffect} from "react";
 
 type LinkDescriptor = {
     rel: string;
@@ -29,6 +31,11 @@ export const links = (): LinkDescriptor[] => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+    const { init } = usePuterStore();
+    useEffect(() => {
+        init();
+    }, [init]);
+
     return (
         <html lang="en">
         <head>
@@ -38,9 +45,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <Links />
         </head>
         <body>
-        {children}
-        <ScrollRestoration />
-        <Scripts />
+            <script src="https://js.puter.com/v2/"></script>
+            {children}
+            <ScrollRestoration />
+            <Scripts />
         </body>
         </html>
     );
@@ -50,7 +58,6 @@ export default function App() {
     return <Outlet />;
 }
 
-// ✅ Proper error prop type:
 interface ErrorBoundaryProps {
     error: unknown;
 }
