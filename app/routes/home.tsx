@@ -17,7 +17,7 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
         const { auth, kv } = usePuterStore();
         const navigate = useNavigate();
-        const [resume, setResume] = useState<Resume[]>([]);
+        const [resumes, setResumes] = useState<Resume[]>([]);
         const [loadingResumes, setLoadingResume] = useState(false);
 
         useEffect(() => {
@@ -35,7 +35,7 @@ export default function Home() {
 
             console.log("parsedResumes", parsedResumes);
 
-            setResume(parsedResumes || []);
+            setResumes(parsedResumes || []);
             setLoadingResume(false);
         }
         loadResumes();
@@ -71,7 +71,7 @@ export default function Home() {
             {!loadingResumes && resumes.length > 0 && (
                 <div className="resumes-section">
                     {resumes.map((resume) => (
-                        <ResumeCard key ={resume.id} resume={resume}></ResumeCard>
+                        <ResumeCard key ={resume.id} resume={resume} />
                     ))}
                 </div>
             )}
