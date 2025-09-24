@@ -1,3 +1,4 @@
+import { Link, useParams } from "react-router";
 import ScoreGauge from "~/components/ScoreGauge";
 import ScoreBadge from "~/components/ScoreBadge";
 
@@ -22,16 +23,34 @@ const Category = ({ title, score }: { title: string, score: number }) => {
 }
 
 const Summary = ({ feedback }: { feedback: Feedback }) => {
+    const { id } = useParams();
+    
     return (
         <div className="bg-white rounded-2xl shadow-md w-full">
             <div className="flex flex-row items-center p-4 gap-8">
                 <ScoreGauge score={feedback.overallScore} />
 
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 flex-1">
                     <h2 className="text-2xl font-bold">Your Resume Score</h2>
                     <p className="text-sm text-gray-500">
                         This score is calculated based on the variables listed below.
                     </p>
+                    
+                    {/* Action Buttons */}
+                    <div className="flex gap-3 mt-4">
+                        <Link
+                            to={`/builder?resumeId=${id}`}
+                            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                        >
+                            Build Better Resume
+                        </Link>
+                        <Link
+                            to="/builder"
+                            className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium"
+                        >
+                            Start Fresh Resume
+                        </Link>
+                    </div>
                 </div>
             </div>
 

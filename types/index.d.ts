@@ -56,3 +56,60 @@ interface Feedback {
         }[];
     };
 }
+
+interface PersonalInfo {
+    fullName: string;
+    email: string;
+    phone: string;
+    location: string;
+    linkedIn?: string;
+    portfolio?: string;
+    github?: string;
+}
+
+interface Experience {
+    id: string;
+    company: string;
+    position: string;
+    location: string;
+    startDate: string;
+    endDate: string;
+    current: boolean;
+    description: string[];
+}
+
+interface Education {
+    id: string;
+    institution: string;
+    degree: string;
+    field: string;
+    startDate: string;
+    endDate: string;
+    gpa?: string;
+}
+
+interface Project {
+    id: string;
+    name: string;
+    description: string;
+    technologies: string[];
+    link?: string;
+    github?: string;
+}
+
+interface ResumeData {
+    personalInfo: PersonalInfo;
+    summary: string;
+    experience: Experience[];
+    education: Education[];
+    skills: string[];
+    projects: Project[];
+    certifications: string[];
+}
+
+interface ResumeTemplate {
+    id: string;
+    name: string;
+    preview: string;
+    description: string;
+}
