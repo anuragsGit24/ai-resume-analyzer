@@ -1,23 +1,13 @@
 {
   "version": 2,
-  "builds": [
+  "buildCommand": "npm run build",
+  "outputDirectory": "build/client",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
     {
-      "src": "build/server/index.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "build/client/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/build/client/(.*)",
-      "dest": "/build/client/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/build/server/index.js"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
