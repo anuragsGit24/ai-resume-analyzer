@@ -194,4 +194,4 @@ If this project helped you land your dream job, please give it a ⭐ star on Git
 ---
 
 ### 🔗 Live Demo
-[**Try AI Resume Analyzer →**](https://your-deployed-url.vercel.app)
+[**Try AI Resume Analyzer →**](https://ai-resume-analyzer-three-tau.vercel.app/)
