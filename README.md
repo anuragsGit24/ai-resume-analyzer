@@ -126,44 +126,6 @@ ai-resume-analyzer/
 └── tailwind.config.js    # Tailwind CSS configuration
 ```
 
-## 🚀 Deployment
-
-Deploy your AI Resume Analyzer to multiple platforms with ease:
-
-### **Vercel (Recommended)**
-```bash
-# Push to GitHub and connect at vercel.com
-# Or use Vercel CLI:
-npm i -g vercel
-vercel login
-vercel --prod
-```
-
-### **Netlify**
-```bash
-# Connect GitHub repo or use CLI:
-npm run build
-npx netlify-cli@latest deploy --prod --dir=build/client
-```
-
-### **Docker Deployment**
-```bash
-# Build and run with Docker
-docker build -t ai-resume-analyzer .
-docker run -p 3000:3000 ai-resume-analyzer
-
-# Deploy to any Docker-compatible platform:
-# - Google Cloud Run, AWS ECS, Azure Container Apps
-# - DigitalOcean App Platform, Railway, Fly.io
-```
-
-### **Other Platforms**
-- **Railway**: `railway up`
-- **Render**: Connect GitHub repo
-- **Heroku**: Standard Node.js deployment
-
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
-
 ## 🎯 Key Benefits
 
 - **🚀 Save Time**: Get instant professional feedback instead of guessing
@@ -184,9 +146,6 @@ See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
 - **Build Tool**: Vite
 - **Deployment**: Docker, Vercel, Netlify ready
 
-## 📸 Screenshots
-
-*Coming soon - add screenshots of your application interface*
 
 ## 🤝 Contributing
 
@@ -221,8 +180,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 - 🐛 **Bug Reports**: [Open an Issue](https://github.com/anuragsGit24/ai-resume-analyzer/issues)
 - 💬 **Discussions**: [GitHub Discussions](https://github.com/anuragsGit24/ai-resume-analyzer/discussions)
-- 📧 **Email**: [Your Email Here]
-- 🐦 **Twitter**: [@YourHandle]
 
 ## ⭐ Show Your Support
 
@@ -230,7 +187,7 @@ If this project helped you land your dream job, please give it a ⭐ star on Git
 
 ---
 
-**Built with ❤️ by [Anurag](https://github.com/anuragsGit24)**
+**Built by [Anurag](https://github.com/anuragsGit24)**
 
 *Empowering job seekers with AI-driven resume optimization* ✨
 
