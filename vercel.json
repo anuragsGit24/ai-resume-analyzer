@@ -2,24 +2,22 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/node",
-      "config": {
-        "maxLambdaSize": "50mb"
-      }
+      "src": "build/server/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "build/client/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/build/(.*)",
-      "dest": "/$1"
+      "src": "/build/client/(.*)",
+      "dest": "/build/client/$1"
     },
     {
       "src": "/(.*)",
       "dest": "/build/server/index.js"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  ]
 }
